@@ -1,0 +1,78 @@
+<apex:page controller="testTab" sidebar="false" standardStylesheets="false" lightningStyleSheets="true">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+        <head>
+            <meta charset="utf-8" />
+            <meta http-equiv="x-ua-compatible" content="ie=edge" />
+            <title>testTab</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <apex:slds />
+            <apex:variable value="{!OR($User.UIThemeDisplayed == 'Theme4d', $User.UIThemeDisplayed == 'Theme4t')}" var="isLightning" />
+            <style type="text/css">
+            </style>
+        </head>
+        <body>
+            <div class="slds-scope">
+                <apex:outputPanel layout="block" styleClass="" style="height: 100%;position: {!IF(isLightning,'absolute','inherit')};left: 0;right: 0;top: 0;bottom: 0;">
+                    <div class="slds-grid slds-wrap" style="height: 100%;">
+                        <div class="slds-col slds-size_1-of-2 slds-small-size_1-of-1 slds-medium-size_3-of-12 slds-large-size_2-of-12" style="height: 100%;border-right: 2px solid gray;">
+                            <div class="slds-border_bottom" >
+                                <img src="{!URLFOR($Resource.test, 'test/Images/barbi.png')}" alt="barbi Logo" />
+                            </div>
+                            <div class="slds-nav-vertical {!IF(isLightning,'slds-p-around_x-small','slds-p-right_x-small')}" aria-label="Sub page">
+                                <div class="slds-nav-vertical__section">
+                                    <h2 id="entity-header" class="slds-nav-vertical__title slds-text-title_caps">Reports</h2>
+                                    <ul>
+                                        <li class="slds-nav-vertical__item slds-is-active"><a href="javascript:void(0);" class="slds-nav-vertical__action" aria-describedby="entity-header" aria-current="page">Recent</a></li>
+                                        <li class="slds-nav-vertical__item"><a href="javascript:void(0);" class="slds-nav-vertical__action" aria-describedby="entity-header">Created by Me</a></li>
+                                        <li class="slds-nav-vertical__item"><a href="javascript:void(0);" class="slds-nav-vertical__action" aria-describedby="entity-header">Private Reports</a></li>
+                                        <li class="slds-nav-vertical__item"><a href="javascript:void(0);" class="slds-nav-vertical__action" aria-describedby="entity-header">Public Reports</a></li>
+                                        <li class="slds-nav-vertical__item"><a href="javascript:void(0);" class="slds-nav-vertical__action" aria-describedby="entity-header">All Reports</a></li>
+                                    </ul>
+                                </div>
+                                <div class="slds-nav-vertical__section">
+                                    <h2 id="folder-header" class="slds-nav-vertical__title slds-text-title_caps">Folders</h2>
+                                    <ul>
+                                        <li class="slds-nav-vertical__item"><a href="javascript:void(0);" class="slds-nav-vertical__action" aria-describedby="folder-header">Created by Me</a></li>
+                                        <li class="slds-nav-vertical__item"><a href="javascript:void(0);" class="slds-nav-vertical__action" aria-describedby="folder-header">Shared with Me</a></li>
+                                        <li class="slds-nav-vertical__item"><a href="javascript:void(0);" class="slds-nav-vertical__action" aria-describedby="folder-header">All Reports</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="slds-col slds-size_1-of-2 slds-small-size_1-of-1 slds-medium-size_9-of-12 slds-large-size_10-of-12 {!IF(isLightning,'slds-p-around_x-small','slds-p-left_x-small')}">
+                            <!-- PAGE HEADER -->
+                            <div class="slds-page-header">
+                                <div class="slds-page-header__row">
+                                    <div class="slds-page-header__col-title">
+                                        <div class="slds-media">
+                                            <div class="slds-media__figure">
+                                                <span class="slds-icon_container slds-icon-standard-opportunity" title="Setup">
+                                                    <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/custom-sprite/svg/symbols.svg#custom3')}" />
+                                                    </svg>
+                                                    <span class="slds-assistive-text">Setup</span>
+                                                </span>
+                                            </div>
+                                            <div class="slds-media__body">
+                                                <div class="slds-page-header__name">
+                                                    <div class="slds-page-header__name-title">
+                                                        <h1>
+                                                            <span class="slds-page-header__title slds-truncate" title="Setup">Setup</span>
+                                                        </h1>
+                                                    </div>
+                                                </div>
+                                                <p class="slds-page-header__name-meta">Kalpana • testTab</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- / PAGE HEADER -->
+                        </div>
+                    </div>
+                </apex:outputPanel>
+            </div>
+        </body>
+    </html>
+</apex:page>
